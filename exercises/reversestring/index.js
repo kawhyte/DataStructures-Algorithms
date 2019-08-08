@@ -34,5 +34,5 @@ console.log(ans);
 return ans;
 
 }
- reverse("kenny");
+
 module.exports = reverse;
