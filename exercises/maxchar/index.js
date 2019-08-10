@@ -13,7 +13,6 @@ function maxChar(str) {
   for (let i of str) {
     if (!chars[i]) {
       chars[i] = 1;
-      //console.log(chars[i]);
     } else {
       chars[i]++;
     }
