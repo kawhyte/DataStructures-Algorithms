@@ -30,17 +30,29 @@
 
 
 //Solution 2
+// function chunk(array, size) {
+
+//   const chunkedArray = [];
+// let index = 0;
+
+// while (index < array.length) {
+//     //array.slice(index, index +size)
+//     chunkedArray.push(array.slice(index, index + size))
+//     index = index + size;
+// }
+// return chunkedArray;  
+// }
+
+//Solution 3
 function chunk(array, size) {
 
-    const chunkedArray = [];
-    let index = 0;
-    
-    while (index < array.length) {
-        //array.slice(index, index +size)
-        chunkedArray.push(array.slice(index, index +size))
-        index = index + size;
-    }
-    return chunkedArray;  
+const chunkedArray = [];
+
+ for (let index = 0; index < array.length; index += size) {
+     chunkedArray.push(array.slice(index, index + size));
+ }
+
+return chunkedArray;  
 }
 
 module.exports = chunk;
