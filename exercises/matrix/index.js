@@ -16,6 +16,22 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
+    const result =[];
+
+    for (let index = 0; index < n; index++) {
+      result.push([]);
+        
+    }
+    let counter = 1;
+
+    let startColumn = 0;
+    let endColumn = n-1;
+    let starRow = 0;
+    let endRow = n-1;
+
+    while (startColumn <= endColumn  && starRow <= endRow) {
+        
+    }
 
     
 }
