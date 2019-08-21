@@ -51,9 +51,6 @@ class Queue {
       return itemOnTop;
 
   }
-
-
-  
 }
 
 module.exports = Queue;
