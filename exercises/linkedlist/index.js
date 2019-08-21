@@ -35,15 +35,43 @@ class LinkedList {
     let node = this.head;
     return node;
   }
+
+  getLast(){
+
+    let node = this.head;
+
+    if (!node) {
+        return null;
+    }
+
+
+    while (node) {
+        if (!node.next) {
+          return node;
+
+        }
+  
+      node = node.next;
+    }
+
+    //return node;
+
+  }
+
+  clear(){
+      
+  }
 }
 
 function testlink() {
   const list = new LinkedList();
-  list.insertFirst("a");
-  list.insertFirst("b");
-  list.insertFirst("c");
+  list.insertFirst("1");
+  list.insertFirst("2");
+  list.insertFirst("3");
 
   //console.log(list);
+  //console.log(list.getFirst());
+  console.log(list.getLast());
   //console.log(list.size());
 }
 
