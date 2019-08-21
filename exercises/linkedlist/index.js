@@ -26,40 +26,46 @@ class LinkedList {
     while (node) {
       count++;
       node = node.next;
-      
     }
     return count;
   }
 
-  getFirst(){
+  getFirst() {
     let node = this.head;
     return node;
   }
 
-  getLast(){
-
+  getLast() {
     let node = this.head;
 
     if (!node) {
-        return null;
+      return null;
     }
 
-
     while (node) {
-        if (!node.next) {
-          return node;
+      if (!node.next) {
+        return node;
+      }
 
-        }
-  
       node = node.next;
     }
 
     //return node;
-
   }
 
-  clear(){
-      
+  clear() {
+  this.head = null;
+  }
+
+  removeFirst(){
+
+    if (!this.head) {
+        return null;
+      }
+    let node = this.head;
+    let second  = node.next;
+    this.head = second;
+
   }
 }
 
