@@ -54,30 +54,58 @@ class LinkedList {
   }
 
   clear() {
-  this.head = null;
+    this.head = null;
   }
 
-  removeFirst(){
-
+  removeFirst() {
     if (!this.head) {
-        return null;
-      }
+      return null;
+    }
     let node = this.head;
-    let second  = node.next;
+    let second = node.next;
     this.head = second;
+  }
 
+  removeLast() {
+    if (!this.head) {
+      return;
+    }
+
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+
+    let node = this.head.next;
+    let previousNode = this.head;
+
+    while (node.next) {
+      previousNode = node;
+      node = node.next;
+    }
+    previousNode.next = null;
+  }
+
+  insertLast(data) {
+    const lastNode = this.getLast();
+
+    if (lastNode) {
+      lastNode.next = new Node(data);
+    } else {
+      this.head = new Node(data);
+    }
   }
 }
 
 function testlink() {
   const list = new LinkedList();
-  list.insertFirst("1");
+  list.insertFirst("100");
   list.insertFirst("2");
   list.insertFirst("3");
-
-  //console.log(list);
-  //console.log(list.getFirst());
   console.log(list.getLast());
+  console.log(list.insertLast("12345"));
+  //console.log(list.getFirst());
+
   //console.log(list.size());
 }
 
