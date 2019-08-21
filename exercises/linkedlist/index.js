@@ -14,10 +14,34 @@ class LinkedList {
     this.head = null;
   }
 
-  insertFirst(data){
-  const node = new Node(data,this.head)
-  this.head = node; // assign new head
+  insertFirst(data) {
+    const node = new Node(data, this.head);
+    this.head = node; // assign new head
+  }
+
+  size() {
+    let count = 0;
+    let node = this.head;
+
+    while (node) {
+      count++;
+      node = node.next;
+      
+    }
+    return count;
   }
 }
+
+function testlink() {
+  const list = new LinkedList();
+  list.insertFirst("a");
+  list.insertFirst("b");
+  list.insertFirst("c");
+
+  //console.log(list);
+  //console.log(list.size());
+}
+
+testlink();
 
 module.exports = { Node, LinkedList };
