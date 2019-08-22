@@ -95,6 +95,24 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
+
+  getAt(index) {
+    if (!this.head) {
+      return null;
+    }
+    let count = 0;
+
+    let node = this.head;
+
+    while (node) {
+      if (count === index) {
+        return node;
+      }
+      count++;
+      node = node.next;
+    }
+    return null;
+  }
 }
 
 function testlink() {
@@ -103,7 +121,8 @@ function testlink() {
   list.insertFirst("2");
   list.insertFirst("3");
   console.log(list.getLast());
-  console.log(list.insertLast("12345"));
+  console.log(list.getAt());
+  //console.log(list.insertLast("12345"));
   //console.log(list.getFirst());
 
   //console.log(list.size());
