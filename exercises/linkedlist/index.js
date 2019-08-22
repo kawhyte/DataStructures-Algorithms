@@ -113,6 +113,25 @@ class LinkedList {
     }
     return null;
   }
+
+  removeAt(index) {
+    if (!this.head) {
+      return;
+    }
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    const previousNode = this.getAt(index - 1);
+
+    if (!previousNode || !previousNode.next) {
+      return;
+    }
+
+    previousNode.next = previousNode.next.next;
+  }
 }
 
 function testlink() {
@@ -120,8 +139,9 @@ function testlink() {
   list.insertFirst("100");
   list.insertFirst("2");
   list.insertFirst("3");
-  console.log(list.getLast());
-  console.log(list.getAt());
+  //console.log(list.getLast());
+  //console.log(list.getAt(0));
+  console.log(list.removeAt(1));
   //console.log(list.insertLast("12345"));
   //console.log(list.getFirst());
 
