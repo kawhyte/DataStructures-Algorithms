@@ -18,6 +18,11 @@ describe('Bubble sort', () => {
   });
 });
 
+
+
+
+
+
 describe('Selection sort', () => {
   test('sorts an array', () => {
     expect(selectionSort(getArray())).toEqual(getSortedArray());
